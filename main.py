@@ -1,16 +1,22 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hello, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('world')
-print("Hello world")
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+name=int(input('Введите ваше число: '))
+a=str(name)
+i=0
+while len(a)!=1:
+    i=len(a)-1
+    b=0
+    while i!=-1:
+        b=b+int(a[i])
+        i=i-1
+    a=str(b)
+if b==3 or b==6 or b==9:
+    x=int(str(name)[-1])
+    if x==0 or x==5:
+        print('FizzBuzz')
+    else:
+        print('Fizz')
+else:
+    x = int(str(name)[-1])
+    if x == 0 or x == 5:
+        print('Buzz')
+    else:
+        print('None')

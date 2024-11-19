@@ -1,29 +1,27 @@
-oper=input('(//-для деления нацело, **-для возведения в степень)‘\nВведите математическую операцию для вычисления: ')
-mathlist=['+','-','*','/','**','//']
-#mathlist.extend(oper)
-signpos=0
-while oper[signpos].isnumeric()==True:
-    signpos+=1
+import tkinter as tk
 
-if oper[signpos+1]=='*' or oper[signpos+1]=='/':#Проверка не степень ли это или деление нацело
-    Firstnumberdel = int(oper[0:signpos])
-    Secondnuberdel = int(oper[signpos + 2:])
-    if oper[signpos+1]=='*':
-        print(Firstnumberdel**Secondnuberdel)
-    else:
-        print(Firstnumberdel//Secondnuberdel)
 
-else:#если базовые функции
-    Firstnumber=int(oper[0:signpos])
-    Secondnuber=int(oper[signpos+1:])
-    opnum0=0
-    while mathlist[opnum0]!=oper[signpos] or opnum0==4:
-        opnum0+=1
-    if opnum0==0:
-        print(Firstnumber+Secondnuber)
-    if opnum0==1:
-        print(Firstnumber-Secondnuber)
-    if opnum0==2:
-        print(Firstnumber*Secondnuber)
-    if opnum0==3:
-        print(Firstnumber/Secondnuber)
+def count():
+    int(number_1.get())
+
+window=tk.Tk()
+window.title("Калькулятор суммы для рассрочки")
+window.geometry('600x450')
+window.resizable(False,False)
+
+button_3_month=tk.Button(window,width=12, height=3, text='3-10 м.')
+button_3_month.place(x=24, y=250)
+
+button_12_month=tk.Button(window,width=12, height=3, text='12-18')
+button_12_month.place(x=173, y=250)
+
+button_18_month=tk.Button(window,width=12, height=3, text='18-24')
+button_18_month.place(x=322, y=250)
+
+button_36_month=tk.Button(window,width=12, height=3, text='24-36')
+button_36_month.place(x=471, y=250)
+
+number1_entry=tk.Entry(window, width=90)
+number1_entry.place(x=24, y=200)
+
+window.mainloop()

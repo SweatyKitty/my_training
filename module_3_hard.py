@@ -1,50 +1,59 @@
-import tkinter as tk
-from tkinter import Button, Entry
-def gen_check():
-    if i is list:
-        list_check(u)
-    elif i is dict:
-        dict_check(u)
-    elif i is tuple:
-        tuple_check()
-    elif i is set:
-        set_check()
+from itertools import count
+from operator import truediv
+
+data_structure = [[1, 2, 3], {'a': 4, 'b': 5}, (6, {'cube': 7, 'drum': 8}), "Hello", ((), [{(2, 'Urban', ('Urban2', 35))}])]
+
+
+def calculate_structure_sum(data_str=[1,0,1]):
+    if isinstance(data_str, int) == True:
+        count_int(data_str)
+    elif isinstance(data_str, str) == True:
+        count_str(data_str)
+    elif isinstance(data_str, dict) == True:
+        count_list(params_dict(**data_str))
+    elif isinstance(data_str, set) == True:
+        count_list(count_set(data_str))
     else:
-        int_float_String_bool_check()
+        for i in range(len(data_str)):
+            if isinstance(data_str[i],list)==True:
+                count_list(data_str[i])
+            elif isinstance(data_str[i],dict)==True:
+                count_list(params_dict(**data_str[i]))
+            elif isinstance(data_str[i], tuple) == True:
+                count_list(list(data_str[i]))
+            elif isinstance(data_str[i], int) == True:
+                count_int(data_str[i])
+            elif isinstance(data_str[i], str) == True:
+                count_str(data_str[i])
+            elif isinstance(data_str[i], set) == True:
+                count_list(count_set(data_str[i]))
+        return(x)
 
-def list_check(u):
-
-def dict_check(u):
-    a=[*u]
-    z=0
-    for i in range(len(u)):
-        z=z+len(a[i])+int(u[a[i]])+1
-    return(z)
 
 
-def tuple_check(u):
+x=0
 
-def set_check(u):
+def params_dict(**kwargs):
+    b = []
+    for key, value in kwargs.items():
+        b.append(key)
+        b.append(value)
+    return(b)
+def count_int(q=0):
+    global x
+    x=x+q
 
-def int_float_String_bool_check():
+def count_str(w=''):
+    global x
+    x=x+len(w)
 
-def count():
-    data_structure=[string_Entry.get()]
-    for i in data_structure:
-        isinstance()
+def count_list(e_e=[1,0,1]):
+    for c in range(len(e_e)):
+        calculate_structure_sum(e_e[c])
+def count_set(mn):
+    p=list(mn)
+    return p
 
-window=tk.Tk()
-window.title('Окно для задачи хард 3 модуля')
-window.geometry('700x400')
-window.resizable(False, False)
-
-button_count=tk.Button(window,width=10, height=10, text='3-10 м.', command=count)
-button_count.place(x=335, y=250)
-
-string_Entry=tk.Entry(window, width=90)
-string_Entry.place(x=40, y=200)
-
-string_Entry=tk.Entry(window, width=90)
-string_Entry.place(x=40, y=310)
-
-window.mainloop()
+# print(range(len(data_structure)))
+calculate_structure_sum(data_structure)
+print(x)

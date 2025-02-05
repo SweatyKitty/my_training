@@ -52,10 +52,10 @@ button_6_month.place(x=24, y=290)
 button_10_month=tk.Button(window,width=5, height=1, text='10м.', command=dop_month_10)
 button_10_month.place(x=73, y=290)
 
-button_12_month=tk.Button(window,width=12, height=5, text='от 12 до 18\n месяцев',command=month_12)
+button_12_month=tk.Button(window,width=12, height=5, text='12 \n месяцев',command=month_12)
 button_12_month.place(x=173, y=230)
 
-button_18_month=tk.Button(window,width=12, height=3, text='от 18 до 24\n месяцев',command=month_18)
+button_18_month=tk.Button(window,width=12, height=3, text='18\n месяцев',command=month_18)
 button_18_month.place(x=322, y=230)
 
 button_36_month=tk.Button(window,width=12, height=5, text='36\n месяцев',command=dop_month_36)
